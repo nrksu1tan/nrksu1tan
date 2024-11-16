@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NRKSU1TAN | Frontend Developer</title>
+  <!-- Подключение стилей -->
+  <link rel="stylesheet" href="/css/general.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=devices" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=photo_camera" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>   
+
+
+
+<body>
+  <!-- Анимация загрузки -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Навигация -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="logo">NRKSU1TAN</div>
+      <!-- Языковой переключатель -->
+      <div class="language-switcher">
+        <button id="lang-toggle">EN</button>
+      </div>
+      <!-- Мобильное меню -->
+      <div class="menu-icon" id="menu-icon">
+        <i class='bx bx-menu'></i>
+      </div>
+      <nav class="nav" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#about" data-key="nav-about">Обо мне</a></li>
+          <li><a href="#skills" data-key="nav-skills">Навыки</a></li>
+          <li><a href="#projects" data-key="nav-projects">Проекты</a></li>
+          <li><a href="#contact" data-key="nav-contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+
+  <!-- Главный контент -->
+  <main>
+    <!-- Герой-секция -->
+    <section class="hero">
+      <div class="container">
+        <h1 data-key="hero-title">Coder by trade</h1>
+        <p data-key="hero-subtitle">photographer by passion</p>
+      </div>
+    </section>
+
+    <!-- О себе -->
+    <section id="about" class="section about">
+      <div class="container about-container">
+        <div class="about-photo" data-aos="fade-right">
+          <img src="/assets/me.png" alt="Фото Нурсултана">
+        </div>
+        <div class="about-text" data-aos="fade-left">
+          <h2 data-key="about-title">Кто я?</h2>
+          <p data-key="about-text">
+            Привет, я Нурсултан — увлеченный Frontend разработчик и фотограф-любитель. Я специализируюсь на создании удобных и интуитивно понятных пользовательских интерфейсов, а также люблю запечатлевать моменты через объектив камеры.
+            <br><br>
+            Будь то написание чистого и масштабируемого кода или исследование творчества через игры и фотографию, я всегда стремлюсь к инновациям.
+          </p>
+          <a href="resume.pdf" class="btn resume-btn" data-key="resume-button">Резюме</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Навыки -->
+    <section id="skills" class="section skills">
+      <div class="container" data-aos="zoom-in">
+        <h2 data-key="skills-title">Мои навыки</h2>
+        <div class="skills-grid">
+          <div class="skill-icon">
+            <i class='bx bxl-html5'></i>
+          </div>
+          <div class="skill-icon">
+            <i class='bx bxl-css3'></i>
+          </div>
+          <div class="skill-icon">
+            <i class='bx bxl-javascript'></i>
+          </div>
+          <div class="skill-icon">
+            <i class='bx bxl-c-plus-plus'></i>
+          </div>
+          <span class="skill-icon">
+            <i class="material-symbols-outlined">  photo_camera</i>
+              </span>
+          </span>
+
+            
+          <!-- Добавьте другие иконки при необходимости -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Проекты -->
+    <section id="projects" class="section projects">
+      <div class="container" data-aos="fade-up">
+        <h2 data-key="projects-title">Мои работы</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/assets/projects/rod.png" alt="Сайт генеалогического древа">
+            </div>
+            <div class="project-content">
+              <h3 data-key="project1-title">Сайт генеалогического древа</h3>
+              <p data-key="project1-description">Интерактивный инструмент визуализации с использованием JavaScript.</p>
+              <a href="#" class="btn" data-key="project-button">Посмотреть проект</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/assets/projects/portfolio.png" alt="Онлайн-портфолио">
+            </div>
+            <div class="project-content">
+              <h3 data-key="project2-title">Онлайн-портфолио</h3>
+              <p data-key="project2-description">Демонстрация моих навыков и творчества.</p>
+              <a href="#" class="btn" data-key="project-button">Посмотреть проект</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/assets/projects/lec.png" alt="Сайт лекций университета">
+            </div>
+            <div class="project-content">
+              <h3 data-key="project3-title">Сайт лекций университета</h3>
+              <p data-key="project3-description">Ресурсный центр для академических материалов.</p>
+              <a href="#" class="btn" data-key="project-button">Посмотреть проект</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+ <!-- Контакты -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2 data-key="contact-title">Свяжитесь со мной</h2>
+    <p data-key="contact-text">
+      Есть проект или хотите просто пообщаться? Заполните форму ниже или найдите меня в социальных сетях.
+    </p>
+    <div class="contact-grid">
+      <!-- Обертываем форму в новый контейнер -->
+      <div class="contact-form-wrapper">
+        <form action="#" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="email" name="email" placeholder="Ваш Email" required>
+          <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+          <button type="submit" class="btn" data-key="contact-button">Отправить сообщение</button>
+        </form>
+        <!-- Добавляем оверлей внутри контейнера формы -->
+        <div class="overlay">
+          <div class="overlay-content">
+            <h3>Еще в разработке</h3>
+          </div>
+
+        </div>
+      </div>
+      <div class="contact-info">
+        <h3 data-key="contact-find-me">Найдите меня здесь</h3>
+        <p>Email: nrksu1tan@mail.ru</p>
+
+        <div class="social-links">
+          <a href="https://github.com/nrksu1tan" class="social-icon github">
+            <i class='bx bxl-github'></i>GitHub
+          </a>
+          <a href="https://t.me/sultahnk48" class="social-icon telegram">
+            <i class='bx bxl-telegram'></i>Telegram
+          </a>
+          <a href="https://steamcommunity.com/id/nrksu1tan/" class="social-icon steam">
+            <i class='bx bxl-steam'></i>Steam
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Музыкальный плеер -->
+<div class="music-player" id="music-player" data-aos="fade-up">
+  <div class="music-player__cover">
+    <img src="https://raw.githubusercontent.com/nrksu1tan/nrksu1tan.github.io/refs/heads/main/assets/covers/cover1.jpg" alt="Обложка альбома" id="cover">
+  </div>
+  <div class="music-player__info">
+    
+    <div class="music-player__details">
+      <h3 id="title">La mania</h3>
+      <p id="artist">Rilès</p>
+    </div>
+    <div class="music-player__controls">
+      <button id="prev" class="control-button"><i class='bx bx-skip-previous'></i></button>
+      <button id="play" class="control-button"><i class='bx bx-play'></i></button>
+      <button id="next" class="control-button"><i class='bx bx-skip-next'></i></button>
+    </div>
+  </div>
+  <!-- Прогресс-бар -->
+  <div class="music-player__time">
+    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+  </div>
+  <div class="music-player__progress-container" id="progress-container">
+    
+    <div class="music-player__progress" id="progress"></div>
+
+  </div>
+  <!-- Регулировка громкости -->
+  <div class="music-player__volume">
+    <i class='bx bxs-volume-full' id="volume-icon"></i>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+  </div>
+  <audio id="audio" src="https://github.com/nrksu1tan/nrksu1tan.github.io/raw/refs/heads/main/assets/music/song1.mp3"></audio>
+</div>
+
+
+
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 NRKSU1TAN. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="/js/basic.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+ <script src="/js/player.js"></script>
+ <script>
+    AOS.init();
+  </script>
+
+<!-- Музыкальный плеер -->
+
+
+
+</body>
+</html>

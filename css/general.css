@@ -1,0 +1,883 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Анимация загрузки */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #ff4500;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Основные стили */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Контейнер */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Шапка */
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: background 0.3s, backdrop-filter 0.3s;
+}
+
+.header.scrolled {
+    background: rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(20px);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+
+/* Языковой переключатель */
+.language-switcher button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.language-switcher button:hover {
+    color: #ff8c00;
+}
+
+/* Меню */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff8c00;
+}
+
+/* Иконка меню */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Мобильное меню */
+@media (max-width: 768px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100%;
+        background: #1c1c1e;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 5rem;
+        transition: right 0.3s;
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 1rem 2rem;
+        width: 100%;
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Герой-секция */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #111, #333);
+    color: #fff;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    animation: fadeInDown 1s forwards;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Секции */
+.section {
+    padding: 5rem 0;
+}
+
+.section h2 {
+    text-align: left;
+    font-size: 2.5rem;
+    color: #ff4500;
+    margin-bottom: 1rem;
+}
+
+/* О себе */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.about-photo {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+
+.about-photo::before {
+    content: '';
+    position: absolute;
+    
+    top: -15px;
+    left: -40vw; /* Изменено с -6000px на -15px */
+    right: -15px;
+    bottom: 31px;
+    background: linear-gradient(1deg, #fffffe 0%, #333 100%);
+    z-index: -1;
+    border-radius: 20px;
+}
+
+
+.about-photo img {
+    width: 100%;
+    border-radius: 15px;
+    transform: scaleX(-1);
+}
+
+.about-text {
+    flex: 1;
+    position: relative;
+}
+
+.about-text h2 {
+    color: #ff4500;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+.resume-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s;
+}
+
+.resume-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Навыки */
+.skills {
+    background: #1c1c1e;
+}
+
+.skills-grid {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 1rem 0;
+}
+
+.skills-grid::-webkit-scrollbar {
+    height: 15px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb {
+    background: #ff4500;
+    border-radius: 5px;
+}
+
+.skills-grid::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.social-icon i {
+    position: relative;
+    top: 3px; /* Смещает иконку вниз на 2 пикселя */
+    left: -5px;
+    font-size: 22px;
+}
+
+.skill-icon {
+    flex: 0 0 auto;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-icon:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon i {
+    font-size: 3rem;
+    color: #ff4500;
+    transition: color 0.3s;
+}
+
+.skill-icon:hover i {
+    color: #ff8c00;
+}
+
+/* Проекты */
+.projects {
+    background: #1c1c1e;
+    padding: 5rem 1rem; /* Добавлен отступ по бокам */
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Изменено с nowrap на wrap */
+    gap: 2rem;
+    justify-content: flex-start; /* Изменено с center на flex-start */
+    overflow-x: auto; /* Добавлено для горизонтальной прокрутки */
+    padding: 1rem 0; /* Добавлен отступ сверху и снизу */
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+
+.project-card {
+    flex: 0 0 auto;
+    width: 300px; /* Установлена фиксированная ширина */
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Добавлено небольшое увеличение */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Усилен эффект тени */
+}
+
+
+.project-image img {
+    width: 100%;
+    height: 180px; /* Увеличена высота изображения */
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    color: #ff4500;
+    margin-bottom: 1rem;
+}
+
+.project-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-content .btn {
+display: block;
+position: relative;
+
+bottom: 0; /* Прижимаем кнопку к нижнему краю */
+    padding: 0.5rem 1rem;
+    text-align: center;
+    background: #ff4500;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background 0.3s;
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    
+}
+
+.project-content .btn:hover {
+    background: #ff8c00;
+}
+
+
+.projects-grid::-webkit-scrollbar {
+    height: 15px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+    background: #ff4500;
+    border-radius: 5px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 5px;
+}
+
+/* Обертка для формы */
+.contact-form-wrapper {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+
+  /* Общие стили для социальных кнопок */
+.social-links .social-icon {
+    display: inline-flex;
+    align-items: center;
+    margin: 1rem 1rem 0 0;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: 600;
+  }
+  
+  /* Стили для иконок внутри кнопок */
+  .social-links .social-icon i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Индивидуальные стили для каждой кнопки */
+  .social-links .github {
+    background: #333; /* Темно-серый цвет GitHub */
+  }
+  
+  .social-links .github:hover {
+    background: #24292e; /* Немного темнее при наведении */
+  }
+  
+  .social-links .telegram {
+    background: #0088cc; /* Официальный синий цвет Telegram */
+  }
+  
+  .social-links .telegram:hover {
+    background: #006699; /* Темнее при наведении */
+  }
+  
+  .social-links .steam {
+    background: #171a21; /* Официальный цвет Steam */
+  }
+  
+  .social-links .steam:hover {
+    background: #0d0f15; /* Темнее при наведении */
+  }
+  
+  
+  /* Оверлей над формой */
+  .contact-form-wrapper .overlay {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(28, 28, 30, 0.8); /* Полупрозрачный темный фон */
+    backdrop-filter: blur(5px); /* Эффект размытия фона */
+    -webkit-backdrop-filter: blur(5px); /* Для поддержки в Safari */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Располагаем поверх формы */
+  }
+  
+  /* Стили для текста внутри оверлея */
+  .contact-form-wrapper .overlay-content {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .contact-form-wrapper .overlay-content h3 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+
+/* Контакты */
+.contact-grid {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-form,
+.contact-info {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+    background: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background: #1c1c1e;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff4500;
+}
+
+.contact-info {
+    background: #1c1c1e;
+    color: #fff;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+/* Стили для музыкального плеера */
+/* Стили музыкального плеера */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 240px;
+    background-color: #1c1c1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+  }
+  
+  .music-player__cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 11px;
+  }
+  
+  .music-player__info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .music-player__details {
+    flex: 1;
+  }
+  
+  .music-player__details h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .music-player__details p {
+    margin: 5px 0 0;
+    font-size: 0.875rem;
+    color: #ccc;
+  }
+  
+  .music-player__controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .control-button {
+    background: none;
+    border: none;
+    color: #ff4500;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+  }
+  
+  .control-button:hover {
+    color: #ff8c00;
+  }
+  
+  .music-player__progress-container {
+    width: 100%;
+    background: #444;
+    cursor: pointer;
+    height: 6px;
+    position: relative;
+    top: -50px;
+  }
+  .music-player__progress {
+    background: #ff4500;
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .music-player__volume {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .music-player__volume i {
+    font-size: 1.5rem;
+    color: #ff4500;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .music-player__volume input[type="range"] {
+    width: 100%;
+    appearance: none;
+    background: #444;
+    height: 4px;
+    outline: none;
+  }
+  
+  /* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .music-player {
+      width: 30%;
+      left: 5%;
+      bottom: 10px;
+    }
+  
+    .music-player__info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .music-player__details {
+      margin-bottom: 10px;
+    }
+  
+    .music-player__details h3 {
+      font-size: 1rem;
+    }
+  
+    .music-player__details p {
+      font-size: 0.875rem;
+    }
+  
+    .control-button {
+      font-size: 2rem;
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  
+    .music-player__controls {
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+  
+    .music-player__volume {
+      padding: 10px;
+    }
+  
+    .music-player__volume i {
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+  
+    .music-player__volume input[type="range"] {
+      width: calc(100% - 40px);
+    }
+
+    .music-player__cover{
+        width: 50%;
+        height: 50%;
+        border-radius: 11px;
+    }
+  }
+  
+
+  .music-player__time {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 0.7rem;
+  }
+  
+  .music-player__volume input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #ff4500;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .music-player__volume input[type="range"]::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #ff4500;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .music-player__progress::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #ff4500;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .music-player__progress::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #ff4500;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 480px) {
+    .music-player {
+      width: 90%;
+      left: 5%;
+      bottom: 10px;
+    }
+  
+    .control-button {
+      font-size: 1.2rem;
+      margin-left: 5px;
+    }
+  
+    .music-player__details h3 {
+      font-size: 0.9rem;
+    }
+  
+    .music-player__details p {
+      font-size: 0.75rem;
+    }
+  }  
+
+
+/* Футер */
+.footer {
+    background: #1c1c1e;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Плавный скроллинг */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Медиазапросы */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-image{
+
+        padding: 5px;
+        scale: 90%;
+    }
+
+    .projects-grid {
+        overflow-x: auto; /* Обеспечивает горизонтальную прокрутку на мобильных устройствах */
+        -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
+
+    }
+    .project-card {
+        min-width: 300px;
+        width: 60%;
+        height: 100%;
+ /* Регулирует ширину карточек на мобильных устройствах */
+    }
+
+    .section h2 {
+        text-align: center;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .language-switcher {
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+    }
+
+    .menu-icon {
+        order: 3;
+    }
+}
