@@ -18,7 +18,7 @@ const songs = [
     name: 'song1',
     title: 'La mania',
     artist: 'Rilès',
-    cover: './nrksu1tan/assets/music/song1.mp3'
+    cover: "https://nrksu1tan.github.io/nrksu1tan/assets/music/song1.mp3"
   },
   // Добавь больше треков при необходимости
 ];
@@ -29,7 +29,7 @@ let songIndex = 0;
 function loadSong(song) {
   title.innerText = song.title;
   artist.innerText = song.artist;
-  audio.src = `/assets/music/${song.name}.mp3`;
+  audio.src = `https://nrksu1tan.github.io/nrksu1tan/assets/music/${song.name}.mp3`;
   cover.src = song.cover;
 }
 
