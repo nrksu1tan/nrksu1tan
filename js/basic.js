@@ -1,11 +1,6 @@
-// Убираем прелоадер после загрузки страницы
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   const preloader = document.getElementById('preloader');
-  preloader.style.opacity = '0';
-  preloader.style.pointerEvents = 'none';
-  setTimeout(() => {
-      preloader.style.display = 'none';
-  }, 500);
+  preloader.classList.add('hidden');
 });
 
 // Меню бургер
@@ -23,6 +18,8 @@ navLinks.forEach(link => {
       navMenu.classList.remove('active');
   });
 });
+
+
 
 // Эффект стеклянной шапки при скролле
 window.addEventListener('scroll', () => {
