@@ -18,7 +18,7 @@ const songs = [
     name: 'song1',
     title: 'La mania',
     artist: 'Rilès',
-    cover: "https://nrksu1tan.github.io/nrksu1tan/assets/music/song1.mp3"
+    cover: "https://nrksu1tan.github.io/nrksu1tan/assets/covers/cover1.jpg"
   },
   // Добавь больше треков при необходимости
 ];
