@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="Fri, 20 Mar 2014 00:00:00 GMT" />
+
+
+
+ 
+
   <title>NRKSU1TAN | Frontend Developer</title>
   <!-- Подключение стилей -->
   <link rel="stylesheet" href="./css/general.css">
@@ -20,6 +28,7 @@
 
 
 <body>
+    
   <!-- Анимация загрузки -->
   <div class="preloader">
     <div class="grid">
@@ -30,64 +39,7 @@
     </div>
     <div id="status" class="status hidden">Добро пожаловать!</div>
 </div>
-<script>document.addEventListener("DOMContentLoaded", () => {
-    const box1 = document.getElementById("box1");
-    const box2 = document.getElementById("box2");
-    const box3 = document.getElementById("box3");
-    const box4 = document.getElementById("box4");
-    const status = document.getElementById("status");
-    const preloader = document.querySelector(".preloader");
-    const mainContent = document.getElementById("main-content");
 
-
-    // Отключение скролла
-    document.body.classList.add("no-scroll");
-
-    // Фаза 1: Мигает и загорается box1
-    setTimeout(() => {
-        box1.style.opacity = 1;
-        box1.style.backgroundColor = "#4caf50";
-    }, 500);
-
-    // Фаза 2: Загорается box2
-    setTimeout(() => {
-        box2.style.opacity = 1;
-        box2.style.backgroundColor = "#4caf50";
-    }, 2000);
-
-    // Фаза 3: Загорается box4
-    setTimeout(() => {
-        box4.style.opacity = 1;
-        box4.style.backgroundColor = "#4caf50";
-    }, 3000);
-
-    // Фаза 4: Загорается box3
-    setTimeout(() => {
-        box3.style.opacity = 1;
-        box3.style.backgroundColor = "#4caf50";
-    }, 3500);
-
-    // Показ сообщения "Успешно!"
-    setTimeout(() => {
-        status.style.opacity=1;
-    }, 4500);
-
-    // Удаление сообщения "Успешно!" через 2 секунды
-    setTimeout(() => {
-        status.style.opacity=0;
-    }, 7000);
-
-    // Плавное исчезновение прелоадера и отображение основного контента
-    setTimeout(() => {
-        document.body.classList.remove("no-scroll");
-        preloader.classList.add("faded-out");
-        mainContent.classList.remove("hidden");
-
-        // Включение скролла
-
-    }, 8000);
-});
-</script>
 
   <!-- Навигация -->
   <header class="header" id="header">
@@ -186,6 +138,7 @@
       <div class="container" data-aos="fade-up">
         <h2 data-key="projects-title">Мои работы</h2>
         <div class="projects-grid">
+            
           <div class="project-card">
             <div class="project-image">
               <img src="https://raw.githubusercontent.com/nrksu1tan/nrksu1tan/refs/heads/main/assets/projects/rod.png" alt="Сайт генеалогического древа">
@@ -217,6 +170,10 @@
             </div>
           </div>
         </div>
+        <div class="overlay1">
+            <div class="overlay-content1">
+              <h3>Еще в разработке</h3>
+            </div>
       </div>
     </section>
 
@@ -309,11 +266,12 @@
   <!-- Футер -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024 NRKSU1TAN. Все права защищены.</p>
+      <p>&copy; 2024 NRKSU1TAN.</p>
     </div>
   </footer>
 
   <!-- Скрипты -->
+  <script src="./js/loader.js"></script>
   <script src="./js/basic.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 

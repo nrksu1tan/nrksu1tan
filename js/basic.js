@@ -1,7 +1,47 @@
+
 window.addEventListener('load', function () {
   const preloader = document.getElementById('preloader');
   preloader.classList.add('hidden');
 });
+
+
+
+// Создание <meta>, если его нет
+function createThemeMeta() {
+  const meta = document.createElement('meta');
+  meta.setAttribute('name', 'theme-color');
+  document.head.appendChild(meta);
+  return meta;
+}
+
+// Конвертер RGB → HEX
+function rgbToHex(rgb) {
+  const [r, g, b] = rgb.match(/\d+/g).map(Number);
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+}
+
+
+// Создание <meta>, если его нет
+function createThemeMeta() {
+  const meta = document.createElement('meta');
+  meta.setAttribute('name', 'theme-color');
+  document.head.appendChild(meta);
+  return meta;
+}
+
+// Конвертер RGB → HEX
+function rgbToHex(rgb) {
+  const [r, g, b] = rgb.match(/\d+/g).map(Number);
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+}
+
+
+// Функция для преобразования RGB в HEX
+function rgbToHex(rgb) {
+  const [r, g, b] = rgb.match(/\d+/g).map(Number);
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+}
+
 
 // Меню бургер
 const menuIcon = document.getElementById('menu-icon');
