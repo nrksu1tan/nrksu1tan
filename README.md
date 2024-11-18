@@ -59,7 +59,7 @@ Welcome to my portfolio repository! This website showcases my skills as a fronte
 
 ## 🔗 Live Demo
 
-Check out the website here: [nrksu1tan.github.io]([https://nrksu1tan.github.io](https://nrksu1tan.github.io/nrksu1tan/))
+Check out the website here: [nrksu1tan.io](https://nrksu1tan.github.io/nrksu1tan/)
 
 ---
 
