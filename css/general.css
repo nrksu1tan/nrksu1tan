@@ -3,52 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
 }
 
 /* Анимация загрузки */
 /* Анимация загрузки */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1c1c1e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
 
-#preloader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
 
-.spinner {
-  width: 80px;
-  height: 80px;
-  border: 10px solid #f3f3f3;
-  border-top: 10px solid #ff4500;
-  border-radius: 50%;
-  animation: spin 1.5s linear infinite, pulse 1.5s ease-in-out infinite;
-}
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    transform: rotate(0);
-  }
-  50% {
-    transform: scale(1.05);
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: scale(2);
-    transform: rotate(900deg);
-  }
-}
 
 
 
@@ -134,6 +97,75 @@ a {
   opacity: 0;
   transform: translateX(100%);
   z-index: 999;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #121212;
+  z-index: 10000;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50px 50px;
+  grid-template-rows: 50px 50px;
+  gap: 20px;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  border-radius: 8px;
+  opacity: 0.3;
+  transition: opacity 0.5s, background-color 0.5s;
+  -webkit-box-shadow:0px 0px 96px 0px rgba(45,255,196,0.48);
+-moz-box-shadow: 0px 0px 96px 0px rgba(45,255,196,0.48);
+box-shadow: 0px 0px 96px 0px rgba(45,255,196,0.48);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+#status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4caf50;
+  text-align: center;
+  opacity: 0;
+}
+
+.status {
+  display: block;
+
+}
+
+
+.show {
+  opacity: 1;
+}
+
+.faded-out {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
 }
 
 .nav.active {
@@ -301,9 +333,9 @@ a {
 .about-photo::before {
     content: '';
     position: absolute;
-    
+
     top: -15px;
-    left: -15px; /* Изменено с -6000px на -15px */
+    left: -2000px; /* Изменено с -6000px на -15px */
     right: -15px;
     bottom: 31px;
     background: linear-gradient(1deg, #fffffe 0%, #333 100%);
@@ -792,6 +824,15 @@ bottom: 0; /* Прижимаем кнопку к нижнему краю */
     height: 4px;
     outline: none;
   }
+
+  #instructions {
+    position: absolute;
+    color: #666;
+    bottom: 0;
+    padding-bottom: 6px;
+    left: 10px;
+  }
+    
   
   /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
@@ -799,11 +840,19 @@ bottom: 0; /* Прижимаем кнопку к нижнему краю */
       width: 30%;
       left: 5%;
       bottom: 10px;
+      visibility: hidden;
+      display: none;
     }
+
   
     .music-player__info {
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+
       flex-direction: column;
       align-items: flex-start;
+      height: 120px;
     }
   
     .music-player__details {
@@ -827,7 +876,9 @@ bottom: 0; /* Прижимаем кнопку к нижнему краю */
     .music-player__controls {
       width: 100%;
       justify-content: space-around;
-      margin-top: 10px;
+      margin-top: 14px;
+      
+
     }
   
     .music-player__volume {
@@ -848,6 +899,17 @@ bottom: 0; /* Прижимаем кнопку к нижнему краю */
         height: 50%;
         border-radius: 11px;
     }
+
+    .music-player__time {
+      display: flex;
+      justify-content: center;
+      padding: 1px 0;
+      color: #fff;
+      font-size: 0.7rem;
+    }
+
+
+
   }
   
 

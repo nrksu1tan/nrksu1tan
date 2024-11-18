@@ -21,9 +21,73 @@
 
 <body>
   <!-- Анимация загрузки -->
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
+  <div class="preloader">
+    <div class="grid">
+        <div id="box1" class="box"></div>
+        <div id="box2" class="box"></div>
+        <div id="box3" class="box"></div>
+        <div id="box4" class="box"></div>
+    </div>
+    <div id="status" class="status hidden">Добро пожаловать!</div>
+</div>
+<script>document.addEventListener("DOMContentLoaded", () => {
+    const box1 = document.getElementById("box1");
+    const box2 = document.getElementById("box2");
+    const box3 = document.getElementById("box3");
+    const box4 = document.getElementById("box4");
+    const status = document.getElementById("status");
+    const preloader = document.querySelector(".preloader");
+    const mainContent = document.getElementById("main-content");
+
+
+    // Отключение скролла
+    document.body.classList.add("no-scroll");
+
+    // Фаза 1: Мигает и загорается box1
+    setTimeout(() => {
+        box1.style.opacity = 1;
+        box1.style.backgroundColor = "#4caf50";
+    }, 500);
+
+    // Фаза 2: Загорается box2
+    setTimeout(() => {
+        box2.style.opacity = 1;
+        box2.style.backgroundColor = "#4caf50";
+    }, 2000);
+
+    // Фаза 3: Загорается box4
+    setTimeout(() => {
+        box4.style.opacity = 1;
+        box4.style.backgroundColor = "#4caf50";
+    }, 3000);
+
+    // Фаза 4: Загорается box3
+    setTimeout(() => {
+        box3.style.opacity = 1;
+        box3.style.backgroundColor = "#4caf50";
+    }, 3500);
+
+    // Показ сообщения "Успешно!"
+    setTimeout(() => {
+        status.style.opacity=1;
+    }, 4500);
+
+    // Удаление сообщения "Успешно!" через 2 секунды
+    setTimeout(() => {
+        status.style.opacity=0;
+    }, 7000);
+
+    // Плавное исчезновение прелоадера и отображение основного контента
+    setTimeout(() => {
+        document.body.classList.remove("no-scroll");
+        preloader.classList.add("faded-out");
+        mainContent.classList.remove("hidden");
+
+        // Включение скролла
+
+    }, 8000);
+});
+</script>
 
   <!-- Навигация -->
   <header class="header" id="header">
@@ -56,10 +120,20 @@
     <!-- Герой-секция -->
     <section class="hero">
       <div class="container">
+        
+
+
         <h1 data-key="hero-title">Coder by trade</h1>
         <p data-key="hero-subtitle">photographer by passion</p>
       </div>
     </section>
+
+
+
+    <div id="instructions">
+      nrksu1tan
+    </div>
+
 
     <!-- О себе -->
     <section id="about" class="section about">
@@ -191,7 +265,8 @@
   </div>
 </section>
 
-<!-- Музыкальный плеер -->
+
+<!-- 
 <div class="music-player" id="music-player" data-aos="fade-up">
   <div class="music-player__cover">
     <img src="https://raw.githubusercontent.com/nrksu1tan/nrksu1tan/refs/heads/main/assets/covers/cover1.jpg" alt="Обложка альбома" id="cover">
@@ -208,7 +283,8 @@
       <button id="next" class="control-button"><i class='bx bx-skip-next'></i></button>
     </div>
   </div>
-  <!-- Прогресс-бар -->
+
+
   <div class="music-player__time">
     <span id="current-time">0:00</span> / <span id="duration">0:00</span>
   </div>
@@ -217,13 +293,14 @@
     <div class="music-player__progress" id="progress"></div>
 
   </div>
-  <!-- Регулировка громкости -->
+
+
   <div class="music-player__volume">
     <i class='bx bxs-volume-full' id="volume-icon"></i>
     <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
   </div>
   <audio id="audio" src="https://nrksu1tan.github.io/nrksu1tan/assets/music/song1.mp3"></audio>
-</div>
+</div> -->
 
 
 
