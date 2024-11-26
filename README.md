@@ -16,9 +16,9 @@ Whether it's writing **clean and scalable code** or bringing bold creative ideas
 ## Where to Find Me? 🌐
 
 - 📬 Email: [nrksu1tan@mail.ru]  
-- ✈️ Telegram: [Your Telegram](https://t.me/sultahnk48)  
-- 📷 Instagram: [Your Instagram](https://instagram.com/nrksu1tan)  
-- 🎮 Steam: [Your Steam](https://steamcommunity.com/id/nrksu1tan)
+- ✈️ Telegram: [Click](https://t.me/sultahnk48)  
+- 📷 Instagram: [Click](https://instagram.com/nrksu1tan)  
+- 🎮 Steam: [Click](https://steamcommunity.com/id/nrksu1tan)
 
 ---
 
