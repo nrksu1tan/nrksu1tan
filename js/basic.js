@@ -6,6 +6,79 @@ window.addEventListener('load', function () {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const playPauseButton = document.getElementById('playPauseButton');
+  const audioPlayer = new Audio(
+    "https://github.com/nrksu1tan/nrksu1tan/raw/refs/heads/main/assets/music/irina-kairatovna-vsem-salam_yhQTaZit.mp3"
+  );
+  const progressBar = document.getElementById('progressBar');
+  const trackTime = document.getElementById('trackTime');
+  const volumeSlider = document.getElementById('volumeSlider');
+  const volumeSliderFill = document.getElementById('volumeSliderFill');
+  const volumeIcon = document.getElementById('volumeIcon');
+  let isPlaying = false;
+
+  // Кнопка воспроизведения/паузы
+  playPauseButton.addEventListener('click', () => {
+    if (isPlaying) {
+      audioPlayer.pause();
+      playPauseButton.innerHTML = '&#9658;'; // Play icon
+    } else {
+      audioPlayer.play().catch((err) => {
+        console.error("Ошибка воспроизведения: ", err);
+        alert("Не удалось воспроизвести трек. Проверьте URL или доступ к аудио.");
+      });
+      playPauseButton.innerHTML = '&#10073;&#10073;'; // Pause icon
+    }
+    isPlaying = !isPlaying;
+  });
+
+  // Обновление прогресс-бара и времени трека
+  audioPlayer.addEventListener('timeupdate', () => {
+    const currentTime = audioPlayer.currentTime;
+    const duration = audioPlayer.duration || 0;
+    const progressPercent = (currentTime / duration) * 100;
+
+    progressBar.style.width = `${progressPercent}%`;
+    trackTime.innerText = `${formatTime(currentTime)} / ${formatTime(duration)}`;
+  });
+
+  // Регулировка громкости
+  volumeSlider.addEventListener('input', () => {
+    const volume = volumeSlider.value;
+    audioPlayer.volume = volume;
+    volumeSliderFill.style.width = `${volume * 100}%`;
+    volumeIcon.innerHTML =
+      volume > 0.5 ? '&#128266;' : volume > 0 ? '&#128265;' : '&#128263;';
+  });
+
+  // Форматирование времени
+  function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  }
+
+  // Загрузка аудиофайла (проверка)
+  audioPlayer.addEventListener('error', () => {
+    console.error("Ошибка загрузки аудиофайла: ", audioPlayer.error);
+    alert("Не удалось загрузить аудиофайл. Проверьте URL.");
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Создание <meta>, если его нет
 function createThemeMeta() {
   const meta = document.createElement('meta');

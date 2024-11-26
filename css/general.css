@@ -15,6 +15,189 @@
 
 
 
+.music-widget {
+
+  background-color: #181818;
+  border-radius: 12px;
+  color: #fff;
+  padding: 16px;
+}
+
+.music-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.music-widget-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.music-widget-info {
+  flex-grow: 1;
+  margin-left: 12px;
+}
+
+.track-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.track-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ccc;
+}
+
+.music-widget-controls button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.music-widget-body {
+  margin-top: 16px;
+}
+
+.track-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #1db954;
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume-slider {
+  flex-grow: 1;
+  position: relative;
+}
+
+.volume-slider-fill {
+  position: absolute;
+  height: 6px;
+  background-color: #1db954;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+}
+
+.volume-slider input[type="range"] {
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  height: 6px;
+
+}
+
+.volume-slider input[type="range"]::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1db954;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .music-widget {
+    padding: 12px;
+  }
+
+  .music-widget-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .track-title, .track-name {
+    font-size: 12px;
+  }
+
+  .volume-slider input[type="range"]::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+
+
+
+
+
+.cardw {
+  width: 230px;
+  height: 190px;
+  background: #3405a3;
+  border-radius: 15px;
+  box-shadow: 1px 5px 60px 0px #100a886b;
+ }
+ 
+ .cardw .card-border-top {
+  width: 60%;
+  height: 3%;
+  background: #6b64f3;
+  margin: auto;
+  border-radius: 0px 0px 15px 15px;
+ }
+ 
+ .cardw span {
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  font-size: 16px;
+ }
+ 
+ .cardw .jobw {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  padding-top: 3px;
+  font-size: 12px;
+ }
+ 
+ .cardw .img {
+  width: 80px;
+  height: 80px;
+  background: #6b64f3;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 25px;
+ }
+
+
+
+body.no-scroll {
+  overflow: hidden;
+}
 
 /* Основные стили */
 body {
@@ -45,17 +228,27 @@ a {
     z-index: 1000;
     padding: 1rem 0;
     transition: background 0.3s, backdrop-filter 0.3s;
+    backdrop-filter: blur(20px);
 }
 
 .header.scrolled {
+  backdrop-filter: blur(20px);
     background: rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur(20px);
+
+}
+
+.container{
+  backdrop-filter: blur(20px);
+}
+.header{
+  backdrop-filter: blur(20px);
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .logo {
@@ -108,10 +301,8 @@ a {
 
 .preloader {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+    height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,6 +310,7 @@ a {
   gap: 20px;
   background-color: #121212;
   z-index: 10000;
+  overflow: hidden;
 
 }
 
@@ -267,7 +459,7 @@ body.no-scroll {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(120deg, #111, #333);
+    background: linear-gradient(to bottom, #000000, #1f1f1f);
     color: #fff;
     text-align: center;
     padding: 0 1rem;
@@ -477,6 +669,10 @@ body.no-scroll {
     color: #ff8c00;
 }
 
+.contact-text.p{
+bottom: 10px;
+}
+
 /* Проекты */
 .projects {
     background: #1c1c1e;
@@ -484,9 +680,9 @@ body.no-scroll {
 }
 
 .projects-grid {
-    display: flex;
-    flex-wrap: nowrap; /* Изменено с nowrap на wrap */
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     justify-content: flex-start; /* Изменено с center на flex-start */
     overflow-x: auto; /* Добавлено для горизонтальной прокрутки */
     padding: 1rem 0; /* Добавлен отступ сверху и снизу */
@@ -505,30 +701,33 @@ body.no-scroll {
 
 
 .project-card {
-    flex: 0 0 auto;
-    width: 300px; /* Установлена фиксированная ширина */
-    background: #fff;
-    border-radius: 15px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-10px) scale(1.02); /* Добавлено небольшое увеличение */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Усилен эффект тени */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 
 .project-image img {
     width: 100%;
-    height: 180px; /* Увеличена высота изображения */
-    object-fit: cover;
+    height: auto;
+    border-bottom: 2px solid #ddd;
 }
 
 .project-content {
-    padding: 1.5rem;
+    padding: 20px;
 }
+
+.project-buttons {
+    margin-top: 15px;
+  }
+  
 
 .project-content h3 {
     font-size: 1.5rem;
@@ -556,6 +755,20 @@ bottom: 0; /* Прижимаем кнопку к нижнему краю */
     clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
     
 }
+.project-buttons .btn {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #0078ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .project-buttons .btn:hover {
+    background-color: #0056b3;
+  }
 
 .project-content .btn:hover {
     background: #ff8c00;
