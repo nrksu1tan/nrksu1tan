@@ -250,27 +250,43 @@
 
       <!-- Навыки -->
       <section id="skills" class="section skills">
-        <div class="container" data-aos="zoom-in">
+        <div class="container" data-aos="fade-up">
           <h2 data-key="skills-title">Мои навыки</h2>
-          <div class="skills-grid">
-            <div class="skill-icon">
-              <i class='bx bxl-html5'></i>
+          <div class="skills-content">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon">
+                <i class='bx bxl-html5'></i>
+              </div>
+              <h3>HTML5</h3>
             </div>
-            <div class="skill-icon">
-              <i class='bx bxl-css3'></i>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon">
+                <i class='bx bxl-css3'></i>
+              </div>
+              <h3>CSS3</h3>
             </div>
-            <div class="skill-icon">
-              <i class='bx bxl-javascript'></i>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon">
+                <i class='bx bxl-javascript'></i>
+              </div>
+              <h3>JavaScript</h3>
             </div>
-            <div class="skill-icon">
-              <i class='bx bxl-c-plus-plus'></i>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon">
+                <i class='bx bxl-c-plus-plus'></i>
+              </div>
+              <h3>C++</h3>
             </div>
-            <span class="skill-icon">
-              <i class="material-symbols-outlined">photo_camera</i>
-            </span>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="icon">
+                <i class='bx bx-camera'></i>
+              </div>
+              <h3>Фотография</h3>
+            </div>
           </div>
         </div>
       </section>
+      
 
       <!-- Проекты -->
       <section id="projects" class="section projects">
@@ -278,49 +294,38 @@
           <h2 data-key="projects-title">Мои работы</h2>
           <div class="projects-grid">
             <!-- Карточка проекта -->
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
               <div class="project-image">
                 <img src="https://raw.githubusercontent.com/nrksu1tan/nrksu1tan/refs/heads/main/assets/projects/rod.png" alt="Сайт генеалогического древа">
-              </div>
-              <div class="project-content">
-                <h3 data-key="project1-title">Сайт генеалогического древа</h3>
-                <p data-key="project1-description">Интерактивный инструмент визуализации с использованием JavaScript.</p>
-                <div class="project-buttons">
+                <div class="project-overlay">
+                  <h3 data-key="project1-title">Сайт генеалогического древа</h3>
+                  <p data-key="project1-description">Интерактивный инструмент визуализации с использованием JavaScript.</p>
                   <a href="#" class="btn view-project" data-key="project-button-view">Посмотреть проект</a>
                   <a href="https://github.com/nrksu1tan" class="btn github-link" target="_blank" data-key="project-button-code">Код на GitHub</a>
                 </div>
               </div>
             </div>
             <!-- Ещё карточки проектов -->
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
               <div class="project-image">
                 <img src="https://raw.githubusercontent.com/nrksu1tan/nrksu1tan/refs/heads/main/assets/projects/portfolio.png" alt="Онлайн-портфолио">
-              </div>
-              <div class="project-content">
-                <h3 data-key="project2-title">Онлайн-портфолио</h3>
-                <p data-key="project2-description">Демонстрация моих навыков и творчества.</p>
-                <div class="project-buttons">
+                <div class="project-overlay">
+                  <h3 data-key="project2-title">Онлайн-портфолио</h3>
+                  <p data-key="project2-description">Демонстрация моих навыков и творчества.</p>
                   <a href="#" class="btn view-project" data-key="project-button-view">Посмотреть проект</a>
                   <a href="https://github.com/nrksu1tan" class="btn github-link" target="_blank" data-key="project-button-code">Код на GitHub</a>
                 </div>
               </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
               <div class="project-image">
                 <img src="https://raw.githubusercontent.com/nrksu1tan/nrksu1tan/refs/heads/main/assets/projects/lec.png" alt="Сайт лекций университета">
-              </div>
-              <div class="project-content">
-                <h3 data-key="project3-title">Сайт лекций университета</h3>
-                <p data-key="project3-description">Ресурсный центр для академических материалов.</p>
-                <div class="project-buttons">
+                <div class="project-overlay">
+                  <h3 data-key="project3-title">Сайт лекций университета</h3>
+                  <p data-key="project3-description">Ресурсный центр для академических материалов.</p>
                   <a href="#" class="btn view-project" data-key="project-button-view">Посмотреть проект</a>
                   <a href="https://github.com/nrksu1tan" class="btn github-link" target="_blank" data-key="project-button-code">Код на GitHub</a>
                 </div>
-              </div>
-            </div>
-            <div class="overlay1">
-              <div class="overlay-content1">
-                <h3>Еще в разработке</h3>
               </div>
             </div>
           </div>
@@ -331,7 +336,7 @@
       <section id="contact" class="section contact">
         <div class="container">
           <h2 data-key="contact-title">Свяжитесь со мной</h2>
-          <p data-key="contact-text">
+          <p data-key="contact-text" style="margin-bottom: 15px;">
             Есть проект или хотите просто пообщаться? Заполните форму ниже или найдите меня в социальных сетях.
           </p>
           <div class="contact-grid">

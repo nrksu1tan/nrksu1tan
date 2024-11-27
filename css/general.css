@@ -3,8 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -ms-overflow-style: none;  /* IE 10+ */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: auto;  /* IE 10+ */
+
 
 }
 
@@ -214,6 +214,153 @@ a {
     color: inherit;
 }
 
+/* Навыки */
+.skills {
+  background: #f9f9f9;
+  padding: 5rem 0;
+}
+
+.skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.skill-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.3rem;
+  flex: 1 1 calc(33.333% - 2rem);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item .icon {
+  font-size: 4rem;
+  color: #ff4500;
+  margin-bottom: -1rem;
+}
+
+.skill-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Проекты */
+.projects {
+  background: #1c1c1e;
+  padding: 5rem 0;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.project-card {
+  position: relative;
+  flex: 1 1 calc(33.333% - 2rem);
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-image {
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: unset; /* Позволяет изображению полностью покрывать контейнер */
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 28, 30, 0.85);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.project-overlay p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.project-overlay .btn {
+  margin: 5px 0;
+  padding: 0.75rem 1.5rem;
+  background: #ff4500;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.project-overlay .btn:hover {
+  background: #ff8c00;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .skill-item,
+  .project-card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-item,
+  .project-card {
+    flex: 1 1 100%;
+  }
+}
+
+
 /* Контейнер */
 .container {
     width: 90%;
@@ -227,29 +374,32 @@ a {
     width: 100%;
     z-index: 1000;
     padding: 1rem 0;
-    transition: background 0.3s, backdrop-filter 0.3s;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px); /* Добавляет размытие */
+    -webkit-backdrop-filter: blur(10px); /* Для поддержки в Safari */
+
 }
 
 .header.scrolled {
-  backdrop-filter: blur(20px);
-    background: rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px); /* Размытие при прокрутке */
+  -webkit-backdrop-filter: blur(10px); /* Для Safari */
+  background: rgba(0, 0, 0, 0.904);
 
 }
 
 .container{
-  backdrop-filter: blur(20px);
-}
-.header{
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px); /* Размытие при прокрутке */
+  -webkit-backdrop-filter: blur(10px); /* Для Safari */
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 
 }
+
+
 
 .logo {
     font-size: 1.5rem;
@@ -475,6 +625,8 @@ body.no-scroll {
     animation: fadeInUp 1s forwards;
 }
 
+
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -621,7 +773,7 @@ body.no-scroll {
 }
 
 .skills-grid::-webkit-scrollbar {
-    height: 15px;
+  height: 8px;
 }
 
 .skills-grid::-webkit-scrollbar-thumb {
@@ -680,13 +832,16 @@ bottom: 10px;
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-content: flex-start; /* Изменено с center на flex-start */
-    overflow-x: auto; /* Добавлено для горизонтальной прокрутки */
-    padding: 1rem 0; /* Добавлен отступ сверху и снизу */
+  display: grid;
+  grid-auto-flow: column; /* Располагает элементы в колонках, создавая горизонтальную прокрутку */
+  grid-auto-columns: minmax(500px, 1fr); /* Устанавливает ширину колонок */
+  gap: 20px;
+  overflow-x: visible;
+  height: 300px;
+  padding: 1rem 0;
+  overflow: auto;
 }
+
 
 
 .material-symbols-outlined {
@@ -714,11 +869,7 @@ bottom: 10px;
 }
 
 
-.project-image img {
-    width: 100%;
-    height: auto;
-    border-bottom: 2px solid #ddd;
-}
+
 
 .project-content {
     padding: 20px;
@@ -776,7 +927,7 @@ bottom: 0; /* Прижимаем кнопку к нижнему краю */
 
 
 .projects-grid::-webkit-scrollbar {
-    height: 15px;
+  height: 8px;
 }
 
 .projects-grid::-webkit-scrollbar-thumb {
@@ -1244,11 +1395,7 @@ html {
         text-align: center;
     }
 
-    .project-image{
 
-        padding: 5px;
-        scale: 90%;
-    }
 
     .projects-grid {
         overflow-x: auto; /* Обеспечивает горизонтальную прокрутку на мобильных устройствах */
@@ -1257,7 +1404,6 @@ html {
     }
     .project-card {
         min-width: 300px;
-        width: 60%;
         height: 100%;
  /* Регулирует ширину карточек на мобильных устройствах */
     }
